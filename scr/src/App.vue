@@ -1,21 +1,16 @@
 <template>
   <headingApp></headingApp>
   <router-view/>
-
-  <footer>
-    <footerApp></footerApp>
-  </footer>
 </template>
 
 
 <script>
 import headingApp from './components/App/headingApp.vue'
-import footerApp from './components/App/footerApp.vue'
+
 export default{
   name:'App',
   components:{
     headingApp,
-    footerApp
   }
 }
 </script>

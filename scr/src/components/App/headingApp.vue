@@ -19,13 +19,16 @@ export default{
     data(){
         return{
             lists: [
-                {name: 'Trang Chủ' ,link: '/'       ,id: 0  },              
-                {name: 'Trái Cây'  ,link: '/address',id: 1  },
-                {name: 'Bánh'      ,link: '/'       ,id: 2  }, 
-                {name: 'Món Chín'  ,link: '/'       ,id: 3  },
-                {name: 'Gỏi'       ,link: '/'       ,id: 4  },              
-                {name: 'Cá Khô'    ,link: '/'       ,id: 5  }, 
-                {name: 'Mắm'       ,link: '/'       ,id: 6  }
+                {name: 'TRÀ VINH' ,link: '/'       ,id: 0  },              
+                {name: 'TIỀN GIANG'  ,link: '/address',id: 1  },
+                {name: 'BẠC LIÊU'      ,link: '/'       ,id: 2  }, 
+                {name: 'ĐỒNG THÁP'  ,link: '/'       ,id: 3  },
+                {name: 'LONG AN'       ,link: '/'       ,id: 4  },              
+                {name: 'CÀ MAU'    ,link: '/'       ,id: 5  }, 
+                {name: 'VĨNH LONG'       ,link: '/'       ,id: 6  },
+                {name: 'AN GIANG'       ,link: '/'       ,id: 7  },
+                {name: 'HẬU GIANG'       ,link: '/'       ,id: 8  },
+                {name: 'CẦN THƠ'       ,link: '/'       ,id: 9  }
             ],
             nameLogo: require('@/assets/imgs/logo.png'), 
 

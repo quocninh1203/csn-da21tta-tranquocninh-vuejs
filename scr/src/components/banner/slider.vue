@@ -7,7 +7,7 @@
   
       <!-- The slideshow -->
       <div class="carousel-inner">
-        <div v-for="(image, index) in images" :key="index" :class="{ 'carousel-item': true, active: index === currentIndex }">
+        <div  v-for="(image, index) in images" :key="index" :class="{ 'carousel-item': true, active: index === currentIndex }">
           <img :src="image.src" :alt="image.alt" width="1100" height="500">
         </div>
       </div>
@@ -26,6 +26,7 @@
   import pic1 from "@/assets/banner/banner1.jpg";
   import pic2 from "@/assets/banner/banner2.jpg";
   import pic3 from "@/assets/banner/banner3.jpg";
+  //import travinh from "@/assets/banner/tv.png";
   
   export default {
     name:'sliderHome',
@@ -36,7 +37,8 @@
           { src: pic2, alt: "Chicago" },
           { src: pic3, alt: "New York" }
         ],
-        currentIndex: 0
+        currentIndex: 0,
+       
       };
     },
     methods: {
@@ -48,6 +50,13 @@
           this.currentIndex > 0
             ? this.currentIndex - 1
             : this.images.length - 1;
+      }
+    },
+    computed:{
+      stys(){
+        return{
+          'mask-image': 'url(@assets/banner/tv.png)'
+        }
       }
     }
   };
@@ -72,6 +81,12 @@
   ul li {
     height: 5px;
     width: 30px; /* Điều chỉnh kích thước của chỉ mục (indicators) */
+  }
+  .carousel-inner div{
+    mask-image: url(@/assets/banner/tv.png);
+    mask-repeat: no-repeat;
+    
+    
   }
 </style>
 

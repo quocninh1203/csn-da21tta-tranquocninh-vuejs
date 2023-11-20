@@ -1,18 +1,18 @@
 <template>
     <sliderHome></sliderHome>
-    <productList></productList>
+    
 </template>
 
 <script>
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 import sliderHome from '@/components/banner/slider.vue'
-import productList from '@/components/productList.vue'
+
 export default {
   name: 'HomeView',
   components: {
     sliderHome,
-    productList
+
   },
   data(){
     return{
