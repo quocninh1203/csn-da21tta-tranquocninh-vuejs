@@ -19,16 +19,15 @@ export default{
     data(){
         return{
             lists: [
-                {name: 'TRÀ VINH' ,link: '/'       ,id: 0  },              
-                {name: 'TIỀN GIANG'  ,link: '/address',id: 1  },
+                {name: 'TRÀ VINH' ,link: '/travinh'       ,id: 0  },              
+                {name: 'TIỀN GIANG'  ,link: '/',id: 1  },
                 {name: 'BẠC LIÊU'      ,link: '/'       ,id: 2  }, 
                 {name: 'ĐỒNG THÁP'  ,link: '/'       ,id: 3  },
                 {name: 'LONG AN'       ,link: '/'       ,id: 4  },              
                 {name: 'CÀ MAU'    ,link: '/'       ,id: 5  }, 
                 {name: 'VĨNH LONG'       ,link: '/'       ,id: 6  },
-                {name: 'AN GIANG'       ,link: '/'       ,id: 7  },
-                {name: 'HẬU GIANG'       ,link: '/'       ,id: 8  },
-                {name: 'CẦN THƠ'       ,link: '/'       ,id: 9  }
+                {name: 'BẾN TRE'       ,link: '/'       ,id: 7  },
+                
             ],
             nameLogo: require('@/assets/imgs/logo.png'), 
 
@@ -61,7 +60,7 @@ export default{
     height: 50px;
     width:  100vw;
     display: flex;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
     list-style-type: none;
     background-color: rgb(10, 104, 255);

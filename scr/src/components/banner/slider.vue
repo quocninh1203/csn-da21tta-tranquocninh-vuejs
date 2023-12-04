@@ -33,9 +33,14 @@
     data() {
       return {
         images: [
-          { src: pic1, alt: "Los Angeles" },
-          { src: pic2, alt: "Chicago" },
-          { src: pic3, alt: "New York" }
+          { src: pic1, alt: "" },
+          { src: pic2, alt: "" },
+          { src: pic3, alt: "" },
+          { src: pic2, alt: "" },
+          { src: pic2, alt: "" },
+          { src: pic2, alt: "" },
+          { src: pic2, alt: "" },
+          { src: pic2, alt: "" }
         ],
         currentIndex: 0,
        
@@ -50,22 +55,19 @@
           this.currentIndex > 0
             ? this.currentIndex - 1
             : this.images.length - 1;
-      }
+      },
+      
     },
     computed:{
-      stys(){
-        return{
-          'mask-image': 'url(@assets/banner/tv.png)'
-        }
-      }
+      
     }
   };
   </script>
   
   <style scoped>
   .carousel {
-    width: 70vw; /* Điều chỉnh kích thước của carousel */
-    height: 60vh; /* Điều chỉnh chiều cao của carousel */
+    width: 100vw; /* Điều chỉnh kích thước của carousel */
+    height: 79vh; /* Điều chỉnh chiều cao của carousel */
     margin: 0 auto; /* Căn giữa theo chiều ngang và chiều dọc */
     display: flex; /* Sử dụng display flex để căn giữa */
     flex-direction: column; /* Đảm bảo các phần tử trong carousel căn giữa theo chiều dọc */
@@ -73,7 +75,7 @@
   }
 
   .carousel-inner img {
-    max-width: 100%;
+    width: 100%;
     min-width: 800px;
     height: auto; /* Điều chỉnh kích thước của hình ảnh trong carousel */
   }
@@ -81,13 +83,10 @@
   ul li {
     height: 5px;
     width: 30px; /* Điều chỉnh kích thước của chỉ mục (indicators) */
+    margin:10px;
   }
-  .carousel-inner div{
-    mask-image: url(@/assets/banner/tv.png);
-    mask-repeat: no-repeat;
-    
-    
-  }
+
+
 </style>
 
 
