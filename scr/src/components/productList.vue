@@ -1,6 +1,6 @@
 <template>
     <div class="list">
-        <productItem></productItem>
+        <productItem  v-for="(item, index) in products" :key="index" :product = item></productItem>
     </div>
 </template>
 
@@ -12,17 +12,18 @@ export default{
     components:{
         productItem,
     },
-    data(){
-        return{
-            products : [
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-            ]
-        }
-    }
+    props: ['products']
 }
 </script>
+
+
+<style scoped>
+.list{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 750px;
+    
+}
+</style>

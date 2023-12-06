@@ -19,15 +19,10 @@ export default{
     data(){
         return{
             lists: [
-                {name: 'TRÀ VINH' ,link: '/travinh'       ,id: 0  },              
-                {name: 'TIỀN GIANG'  ,link: '/',id: 1  },
-                {name: 'BẠC LIÊU'      ,link: '/'       ,id: 2  }, 
-                {name: 'ĐỒNG THÁP'  ,link: '/'       ,id: 3  },
-                {name: 'LONG AN'       ,link: '/'       ,id: 4  },              
-                {name: 'CÀ MAU'    ,link: '/'       ,id: 5  }, 
-                {name: 'VĨNH LONG'       ,link: '/'       ,id: 6  },
-                {name: 'BẾN TRE'       ,link: '/'       ,id: 7  },
-                
+                {name: 'home' ,link: '/',id: 0},
+                {name: 'Miền Bắc' ,link: '/mienbac'       ,id: 1  },              
+                {name: 'Miền Trung'  ,link: '/mientrung',id: 2  },
+                {name: 'Miền Nam'      ,link: '/miennam'       ,id: 3  },            
             ],
             nameLogo: require('@/assets/imgs/logo.png'), 
 

@@ -1,6 +1,7 @@
 <template>
     <div class="item">
-        <img :src="product.url" alt="product.name">
+        <img :src="product.url" :alt="product.name">
+        
     </div>
 </template>
 
@@ -16,10 +17,10 @@ export default{
 
 <style scoped>
 .item{
-    height: 50px;
-    width: 50px;
-    border: 1px solid #000;
-    background-color: aliceblue;
+    height: 200px;
+    width: 250px;
+    border: 1px solid #fff;
+    
 }
 .item img{
     height: 100%;

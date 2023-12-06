@@ -36,11 +36,7 @@
           { src: pic1, alt: "" },
           { src: pic2, alt: "" },
           { src: pic3, alt: "" },
-          { src: pic2, alt: "" },
-          { src: pic2, alt: "" },
-          { src: pic2, alt: "" },
-          { src: pic2, alt: "" },
-          { src: pic2, alt: "" }
+
         ],
         currentIndex: 0,
        

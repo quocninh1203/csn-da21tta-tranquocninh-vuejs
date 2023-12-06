@@ -1,6 +1,6 @@
 <template>
-    <sliderHome></sliderHome>
-    
+  <sliderHome></sliderHome>
+  
 </template>
 
 <script>
@@ -9,27 +9,21 @@
 import sliderHome from '@/components/banner/slider.vue'
 
 export default {
-  name: 'HomeView',
-  components: {
-    sliderHome,
+name: 'HomeView',
+components: {
+  sliderHome,
 
-  },
-  data(){
-    return{
-      listItem:[
-        {name: 'TRÀ VINH', url: ''},
-        {name: 'TIỀN GIANG', url: ''},
-        {name: 'BẠC LIÊU', url: ''},
-        {name: 'ĐỒNG THÁP', url: ''},
-        {name: 'BẠC LIÊU', url: ''},
-        {name: 'LONG AN', url: ''},
-        {name: 'CÀ MAU', url: ''},
-        {name: 'AN GIANG', url: ''},
-        {name: 'HẬU GIANG', url: ''},
-        {name: 'CẦN THƠ', url: ''},
-      ],
-    }
+},
+data(){
+  return{
+    listItem:[
+      {name: 'Miền Bắc', url: ''},
+      {name: 'Miền Trung', url: ''},
+      {name: 'Miền Nam', url: ''},
+
+    ],
   }
+}
 }
 </script>
 
