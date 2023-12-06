@@ -8,7 +8,7 @@
       <!-- The slideshow -->
       <div class="carousel-inner">
         <div  v-for="(image, index) in images" :key="index" :class="{ 'carousel-item': true, active: index === currentIndex }">
-          <img :src="image.src" :alt="image.alt" width="1100" height="500">
+          <RouterLink :to="image.link"><img :src="image.src" :alt="image.alt" width="1100" height="500" ></RouterLink>
         </div>
       </div>
   
@@ -23,21 +23,14 @@
   </template>
   
   <script>
-  import pic1 from "@/assets/banner/banner1.jpg";
-  import pic2 from "@/assets/banner/banner2.jpg";
-  import pic3 from "@/assets/banner/banner3.jpg";
-  //import travinh from "@/assets/banner/tv.png";
+
+  
   
   export default {
     name:'sliderHome',
+    props:['images'],
     data() {
       return {
-        images: [
-          { src: pic1, alt: "" },
-          { src: pic2, alt: "" },
-          { src: pic3, alt: "" },
-
-        ],
         currentIndex: 0,
        
       };

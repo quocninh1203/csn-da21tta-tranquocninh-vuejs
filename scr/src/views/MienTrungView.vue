@@ -1,14 +1,31 @@
 <template>
-    
-    <h1>hello</h1>
+    <SelectOptions :citys = citysList_mt></SelectOptions>
 </template>
-
-<script>
-
-export default{
+  
+  <script>
+  import SelectOptions from '@/components/SelectOptions.vue'
+  export default {
     name: 'MienTrungView',
     components:{
+        SelectOptions,
+    },
+    data() {
+      return {
+        citysList_mt: [
+            'Tất Cả',
+            'Thanh Hóa',
+            'Nghệ An',
+            'Hà Tĩnh',
+            'Đà Nẵng',
+            'Bình Thuận',
+        ],
+   
        
+      };
     }
-}
-</script>
+  };
+  </script>
+  
+  <style scoped>
+
+  </style>

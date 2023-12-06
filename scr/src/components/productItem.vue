@@ -19,11 +19,14 @@ export default{
 .item{
     height: 200px;
     width: 250px;
-    border: 1px solid #fff;
-    
+    margin: 10px;
 }
 .item img{
     height: 100%;
     width: 100%;
+}
+.item img:hover{
+    opacity: 0.7;
+    cursor: pointer;
 }
 </style>
