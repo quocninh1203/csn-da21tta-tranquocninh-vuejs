@@ -1,7 +1,13 @@
 <template>
     <div class="item">
         <img :src="product.url" :alt="product.name">
-        
+        <div class="content-item">
+            <p class="name-content">{{ product.name }}</p>
+            <div class="price">
+                <div>120.000 &#8363;</div>
+            </div>
+            <i class="unit">Đơn vị tính: 1 cái/1 đơn vị</i>
+        </div>
     </div>
 </template>
 
@@ -17,16 +23,58 @@ export default{
 
 <style scoped>
 .item{
-    height: 200px;
+    height: 350px;
     width: 250px;
-    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
 }
 .item img{
-    height: 100%;
     width: 100%;
+    height: 200px;
 }
 .item img:hover{
     opacity: 0.7;
     cursor: pointer;
+}
+.item:hover{
+    border: 1px solid rgb(87, 32, 24);
+}
+.content-item{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+.name-content{
+    flex: 2;
+    font-size: 20px;
+    color: rgb(87, 32, 24);
+    font-weight: bolder;
+    text-align: center;
+    text-transform: capitalize;
+}
+.price{
+    flex: 1;
+}
+.price div{
+    color:  #fff;
+    font-size: 20px;
+    font-weight: bolder;
+    height: 100%;
+    width: 150px;
+    text-align: center;
+    border: 1px solid  rgb(87, 32, 24);
+    background-color: rgb(87, 32, 24);
+}   
+.price div:hover{
+    cursor: pointer;
+    color:  rgb(87, 32, 24);
+    background-color: #fff;
+}
+.unit{
+    flex: 1;
+    color: #000;
 }
 </style>
