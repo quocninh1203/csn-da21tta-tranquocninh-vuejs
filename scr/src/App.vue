@@ -1,30 +1,19 @@
 <template>
   <headingApp></headingApp>
   <router-view/>
-  <component_text :text="text"></component_text>
 </template>
 
 
 <script>
 import headingApp from './components/App/headingApp.vue'
-import component_text from './components/component_text.vue';
+
 export default{
   name:'App',
   components:{
     headingApp,
-    component_text
+   
   },
-  data(){
-    return{
-      text: [
-        {name: '1'},
-        {name: '2'},
-        {name: '3'},
-        {name: '4'},
-        {name: '5'},
-      ]
-    }
-  }
+
 }
 </script>
 

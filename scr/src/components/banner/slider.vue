@@ -8,7 +8,7 @@
       <!-- The slideshow -->
       <div class="carousel-inner">
         <div  v-for="(image, index) in images" :key="index" :class="{ 'carousel-item': true, active: index === currentIndex }">
-          <RouterLink :to="image.link"><img :src="image.src" :alt="image.alt" width="1100" height="500" ></RouterLink>
+          <RouterLink :to="image.path"><img :src="image.src" width="1100" height="500" ></RouterLink>
         </div>
       </div>
   

@@ -1,10 +1,10 @@
 <template>
-    <div class="item">
-        <img :src="product.url" :alt="product.name">
+    <div class="item" v-for="item in product" :key="item.id_product">
+        <img src="">
         <div class="content-item">
-            <p class="name-content">{{ product.name }}</p>
+            <p class="name-content">{{ item.name }}</p>
             <div class="price">
-                <div>120.000 &#8363;</div>
+                <div>{{ item.price }} &#8363;</div>
             </div>
             <i class="unit">Đơn vị tính: 1 cái/1 đơn vị</i>
         </div>
@@ -16,8 +16,13 @@
 
 export default{
     name: 'productItem',
-    
-    props:['product']
+    props:['product'],
+    data(){
+        return{
+            
+        }
+    }
+
 }
 </script>
 

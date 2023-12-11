@@ -1,21 +1,23 @@
+import { createStore } from 'vuex';
+//
+import pic1 from "@/assets/banner/mienbac.jpg";
+import pic2 from "@/assets/banner/mientrung.jpg";
+import pic3 from "@/assets/banner/miennam.jpg";
 
-<!-- 
-    ct01:
-    ct02:
-    ct03:
-    ct04:
- -->
-<script>
-export default{
-    data(){
+// tạo một instance store mới
+export const store = createStore({
+    state(){
         return{
             allProduct: [
-                {id_product: '', name: '', url: '', price: '', describe: '', id_area: '', id_city: '', id_category: ''},
+                {id_product: '001', name: 'Bánh tét', url: '', price: '100.000', describe: '', id_area: 'mn', id_city: '', id_category: '', favourite: false},
+                {id_product: '002', name: 'dừa sáp', url: '', price: '', describe: '', id_area: 'mn', id_city: '', id_category: '', favourite: false},
+                {id_product: '003', name: 'bánh đậu xanh', url: '', price: '', describe: '', id_area: 'mb', id_city: '', id_category: '', favourite: false},
+                {id_product: '004', name: 'bún đậu', url: '', price: '', describe: '', id_area: 'mn', id_city: '', id_category: '', favourite: false},
             ],
             allArea: [
-                {name: 'Miền Bắc', id_area: 'mienbac', path: '/sanpham/miennam'},
-                {name: 'Miền Trung', id_area: 'mientrung', path: '/sanpham/mientrung'},
-                {name: 'Miền Nam', id_area: 'miennam', path: '/sanpham/miennam'},
+                {name: 'Miền Bắc', id_area: 'mienbac', path: '/sanpham/miennam', src: pic1, alt: ''},
+                {name: 'Miền Trung', id_area: 'mientrung', path: '/sanpham/mientrung', src: pic2, alt: ''},
+                {name: 'Miền Nam', id_area: 'miennam', path: '/sanpham/miennam', src: pic3, alt: ''},
             ],
             allCitys: [
                 {name: '01', id_city: '', id_area: ''},
@@ -83,18 +85,24 @@ export default{
                 {name: '63', id_city: '', id_area: ''},
             ],
             allCategory: [
-                {name: '', id_category: 'ct01', path: ''},
-                {name: '', id_category: 'ct02', path: ''},
-                {name: '', id_category: 'ct03', path: ''},
-                {name: '', id_category: 'ct04', path: ''},
+                {name: 'Rau củ', id_category: 'ct01', path: ''},
+                {name: 'bánh', id_category: 'ct02', path: ''},
+                {name: 'kẹo', id_category: 'ct03', path: ''},
             ],
-            data: 'fd'
+            select: '',
+            path: '/sanpham',
         }
     },
-    methods: {
-        updateMixinData(newData) {
-            this.data = newData;
-        },
+    mutations:{
+        updateSelect(state, [newSelect, newPath]){
+            state.select = newSelect
+            state.path = newPath
+        }
     }
-}
-</script>
+})
+
+
+// đặt store thành export mặc định
+export default store
+
+

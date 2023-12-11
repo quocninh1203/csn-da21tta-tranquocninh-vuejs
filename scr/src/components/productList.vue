@@ -1,41 +1,36 @@
 <template>
     <div class="list">
-        <productItem  v-for="item in compareId" :key="item.id" :product = item ></productItem>
+        <productItem :product=products></productItem>
     </div>
 </template>
 
 
 <script>
 import productItem from '@/components/productItem'
-export default{
+
+export default {
     name: 'productList',
-    components:{
+    components: {
         productItem,
     },
     props: {
         products: Array,
-        selectId: String
     },
-    computed:{
-        compareId(){
-            if(this.selectId == 'all' || this.selectId == null)
-                return this.products
-            else
-                return this.products.filter(product => product.id == this.selectId)
-        }
+    computed: {
+
     }
 }
 </script>
 
 
 <style scoped>
-.list{
+.list {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 10px;
     width: 810px;
-    
+
 }
 </style>

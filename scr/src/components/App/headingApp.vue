@@ -10,13 +10,13 @@
                 <router-link to="/" class="RouterLink">Trang Chủ</router-link>
             </li>
             <li class="catagory-item menuDropdown">
-                <RouterLink to="/sanpham" class="RouterLink">Sản Phẩm
+                <RouterLink to="/sanpham" class="RouterLink" @click="resetSelect">Sản Phẩm
                     <i class="ti-angle-down down"></i>
                 </RouterLink>
                 <menuDropdown class="Dropdown" :dropdownList = categoryList :styleList = styles :width = category_width></menuDropdown>
             </li>
             <li class="citys-item menuDropdown">
-                <RouterLink to="/sanpham" class="RouterLink">Đặc Sản Vùng Miền
+                <RouterLink to="/sanpham" class="RouterLink" @click="resetSelect">Đặc Sản Vùng Miền
                     <i class="ti-angle-down down"></i>
                 </RouterLink>
                 <menuDropdown class="Dropdown" :dropdownList = areaList :styleList = styles></menuDropdown>
@@ -49,17 +49,6 @@ export default{
     data(){
         return{
             nameLogo: require('@/assets/imgs/logo.png'), 
-            areaList: [
-                {name: 'Đặc Sản Miền Bắc', link: '/sanpham/mienbac', id: 0},
-                {name: 'Đặc Sản Miền Trung', link: '/sanpham/mientrung', id: 1},
-                {name: 'Đặc Sản Miền Nam', link: '/sanpham/miennam', id: 2},
-            ],
-            categoryList: [
-                {name: 'Rau, củ, quả', link: '/'},
-                {name: 'Bánh, kẹo', link: '/'},
-                {name: 'Đồ tươi sống', link: '/'},
-                {name: 'Khác', link: '/'},
-            ],
             category_width: '300px',
             styles: 
             {
@@ -71,9 +60,19 @@ export default{
 
         }
     },
+    computed:{
+        areaList(){
+            return this.$store.state.allArea
+        },
+        categoryList(){
+            return this.$store.state.allCategory
+        }
+    },
     methods:{
-      
-    }   
+        resetSelect(){
+            this.$store.commit('updateSelect',['','/sanpham'])
+        }
+    }
    
 }
 </script>

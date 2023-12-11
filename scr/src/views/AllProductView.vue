@@ -1,15 +1,16 @@
 <template>
     <div class="name">
-        <h1>Sản Phẩm{{ data }}</h1>
+        <router-link to="/sanpham">Sản Phẩm</router-link>
+        <router-link :to="this.$store.state.path">{{ this.$store.state.select }}</router-link>
     </div>
-<router-view/>
+    <router-view/>
 </template>
 
 <script>
-import myMinxin from '@/components/allData.vue'
+
 export default{
     name: 'allProductView',
-    mixins: [myMinxin],
+
 }
 
 </script>

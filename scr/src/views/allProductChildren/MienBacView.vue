@@ -1,36 +1,57 @@
 <template>
-    <div class="view">
-      <productList :products = products_mb></productList>
-    </div>
-  </template>
-  
-  <script>
-  import productList from '@/components/productList.vue'
-  export default{
-    name: 'MienBacView',
-    components: {
-      productList,
-  
+  <h2>Các món đặc sản của Miền Bắc</h2>
+  <div class="view">
+    <productList :products = newdata></productList>
+  </div>
+</template>
+
+<script>
+import productList from '@/components/productList.vue'
+export default{
+  name: 'MienBacView',
+  components: {
+    productList,
+  },
+  data(){
+    return{
+      id_area: 'mb',
+    } 
+  },
+  computed:{
+    getdata(){
+      return this.$store.state.allProduct
     },
-    data(){
-          return{
-              products_mb : [
-                {name: 'thịt trâu gác bếp',url: 'https://taybac.tv/wp-content/uploads/2022/10/DSC00196-scaled.jpg'},
-                {name: 'bánh đậu xanh hải dương',url: 'https://static.ecosite.vn/3359/news/2018/05/11/banh-dau-xanh-hai-duong-1526033002.jpg'}
-              ],
-              
-          }
-      }
-  }
-  </script>
+    newdata(){
+      return this.getdata.filter(product => product.id_area == this.id_area)
+    }
+  },
+
+}
+</script>
+
+<style scoped>
+.view{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
   
-  <style scoped>
-  .view{
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    
-  }
-  
-  </style>
+}
+h2{
+  text-transform: uppercase;
+  color:rgb(10, 104, 255);
+  padding: 30px;
+  text-align: center;
+  position: relative;
+}
+h2::before{
+  content: "";
+  position: absolute;
+  z-index: 1;
+  background-color: rgb(10, 104, 255);
+  width: 600px;
+  height: 2px;
+  left: 15%;
+  bottom: 0;
+}
+</style>

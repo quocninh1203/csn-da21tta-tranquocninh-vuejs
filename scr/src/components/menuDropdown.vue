@@ -1,17 +1,16 @@
 <template>
     <ul class="sub-navigation" :style="{width:width, backgroundColor:styleList.backgroundColor}">
-        <li class="item-navigation" v-for="item in dropdownList" :key="item.id" :style="{fontWeight:styleList.fontWeight, fontSize:styleList.fontSize}"
-        >
-            <router-link :to="item.link" class="RouterLink" :style="{color:styleList.color}" >{{ item.name }}</router-link>
+        <li class="item-navigation" v-for="(item, index) in dropdownList" :key="index" 
+        :style="{fontWeight:styleList.fontWeight, fontSize:styleList.fontSize}" @click="select('/'+item.name,item.path)">
+            <router-link :to="item.path" class="RouterLink" :style="{color:styleList.color}" >{{ item.name }}</router-link>
         </li>
     </ul>
 </template>
 
 <script>
-import myMinxin from '@/components/allData.vue'
+
 export default{
     name: 'menuDropdown',
-    mixins: [myMinxin],
     props:{
         dropdownList: Array,
         styleList: Array,
@@ -19,10 +18,14 @@ export default{
     },
     data(){
         return{
-            newdata: ''
+
         }
     },
-
+    methods:{
+        select(value,path){
+            this.$store.commit('updateSelect',[ value, path])
+        }
+    }
 
 }
 </script>

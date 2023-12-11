@@ -1,31 +1,56 @@
 <template>
-    <SelectOptions :citys = citysList_mt></SelectOptions>
+  <h2>Các món đặc sản của Miền Trung</h2>
+  <div class="view">
+    <productList :products = newdata></productList>
+  </div>
 </template>
   
-  <script>
-  import SelectOptions from '@/components/SelectOptions.vue'
-  export default {
-    name: 'MienTrungView',
-    components:{
-        SelectOptions,
+<script>
+import productList from '@/components/productList.vue';
+export default {
+  name: 'MienTrungView',
+  components:{
+    productList,
+  },
+  data() {
+    return {
+      id_area: 'mt',
+    };
+  },
+  computed:{
+    getdata(){
+      return this.$store.state.allProduct
     },
-    data() {
-      return {
-        citysList_mt: [
-            'Tất Cả',
-            'Thanh Hóa',
-            'Nghệ An',
-            'Hà Tĩnh',
-            'Đà Nẵng',
-            'Bình Thuận',
-        ],
-   
-       
-      };
+    newdata(){
+      return this.getdata.filter(product => product.id_area == this.id_area)
     }
-  };
-  </script>
-  
-  <style scoped>
+  },
+};
+</script>
 
-  </style>
+<style scoped>
+.view{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  
+}
+h2{
+  text-transform: uppercase;
+  color:rgb(10, 104, 255);
+  padding: 30px;
+  text-align: center;
+  position: relative;
+}
+h2::before{
+  content: "";
+  position: absolute;
+  z-index: 1;
+  background-color: rgb(10, 104, 255);
+  width: 600px;
+  height: 2px;
+  left: 15%;
+  bottom: 0;
+}
+</style>
