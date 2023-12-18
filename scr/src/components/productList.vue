@@ -1,6 +1,8 @@
 <template>
-    <div class="list">
-        <productItem :product=products></productItem>
+    <div class="list-item" :style="{width: width}">
+        <template v-for="item in products" :key="item.id_product">
+            <productItem :product=item></productItem>
+        </template>
     </div>
 </template>
 
@@ -15,6 +17,7 @@ export default {
     },
     props: {
         products: Array,
+        width: String
     },
     computed: {
 
@@ -24,13 +27,13 @@ export default {
 
 
 <style scoped>
-.list {
+.list-item {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 10px;
-    width: 810px;
-
+    min-width: 810px;
+    margin: 20px auto;
 }
 </style>

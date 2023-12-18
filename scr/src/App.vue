@@ -3,7 +3,6 @@
   <router-view/>
 </template>
 
-
 <script>
 import headingApp from './components/App/headingApp.vue'
 
@@ -11,13 +10,12 @@ export default{
   name:'App',
   components:{
     headingApp,
-   
   },
-
 }
 </script>
+<!-- import JavaScript -->
 
-<style>
+<style scoped>
 *{
   margin: 0;
   padding: 0;
@@ -27,10 +25,7 @@ export default{
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  
 }
-
 </style>
 
 

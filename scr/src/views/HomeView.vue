@@ -1,21 +1,23 @@
 <template>
+<div>
   <sliderHome :images = listItemImages></sliderHome>
-  <div v-for="(item, index) in getCategory" :key="index">
-    <productCategory :category = item></productCategory>
-  </div>
+</div>
 </template>
 
 <script>
 // import components
 import sliderHome from '@/components/banner/slider.vue'
-import productCategory from '@/components/productCategory.vue';
 //import images
 
 export default {
   name: 'HomeView',
   components: {
     sliderHome,
-    productCategory,
+  },
+  data(){
+    return{
+      width: '1290px',
+    }
   },
   computed: {
     listItemImages(){
@@ -25,10 +27,12 @@ export default {
       return this.$store.state.allCategory
     }
   }
-}
+};
+
 </script>
 
 
-<style>
+<style scoped>
+
 
 </style>

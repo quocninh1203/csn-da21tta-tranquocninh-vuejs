@@ -1,104 +1,63 @@
 import { createStore } from 'vuex';
-//
-import pic1 from "@/assets/banner/mienbac.jpg";
-import pic2 from "@/assets/banner/mientrung.jpg";
-import pic3 from "@/assets/banner/miennam.jpg";
+
+//import product image
+import duasap from '../assets/imgs/product/duasap.jpg'
+import banhdauxanh from '../assets/imgs/product/banh-dau-xanh.jpg'
+import duongdua from '../assets/imgs/product/duong-dua.png'
+import ruoucan from '../assets/imgs/product/ruou-can.jpg'
+import tracungdinh from '../assets/imgs/product/tra-cung-dinh.png'
+import nemchua from '../assets/imgs/product/Nem-chua-Thanh-hoa.jpg'
+import banhcay from '../assets/imgs/product/banh-cay.jpg'
+import keocudo from '../assets/imgs/product/keo-cu-do.png'
+import nemnam from '../assets/imgs/product/nem-nam.jpg'
+import banhpia from '../assets/imgs/product/banh-pia.jpg'
+import keomexung from '../assets/imgs/product/keo-me-xung.jpg'
+import ruousim from '../assets/imgs/product/ruou-sim-phu-quoc.png'
+import chabo from '../assets/imgs/product/cha-bo-danang.jpg'
 
 // tạo một instance store mới
 export const store = createStore({
     state(){
         return{
             allProduct: [
-                {id_product: '001', name: 'Bánh tét', url: '', price: '100.000', describe: '', id_area: 'mn', id_city: '', id_category: '', favourite: false},
-                {id_product: '002', name: 'dừa sáp', url: '', price: '', describe: '', id_area: 'mn', id_city: '', id_category: '', favourite: false},
-                {id_product: '003', name: 'bánh đậu xanh', url: '', price: '', describe: '', id_area: 'mb', id_city: '', id_category: '', favourite: false},
-                {id_product: '004', name: 'bún đậu', url: '', price: '', describe: '', id_area: 'mn', id_city: '', id_category: '', favourite: false},
+                {id_product: '001', name: 'Bánh đậu xanh', url: banhdauxanh, price: 100000, describe: '', id_area: 'mienbac', id_category: 'ct02', favourite: false},
+                {id_product: '002', name: 'dừa sáp', url: duasap, price: 200000, describe: '', id_area: 'miennam', id_category: 'ct01', favourite: false},
+                {id_product: '003', name: 'đuông dừa', url: duongdua, price: '45000', describe: '', id_area: 'miennam', id_category: 'ct03', favourite: false},
+                {id_product: '004', name: 'Rượu cần hòa bình', url: ruoucan, price: '', describe: '', id_area: 'mienbac', id_category: 'ct04', favourite: false},
+                {id_product: '005', name: 'Trà cung đình Huế', url: tracungdinh, price: '', describe: '', id_area: 'mientrung', id_category: 'ct04', favourite: false},
+                {id_product: '006', name: 'Nem chua thanh hóa', url: nemchua, price: '', describe: '', id_area: 'mientrung', id_category: 'ct03', favourite: false},
+                {id_product: '007', name: 'Bánh cáy Thái bình', url: banhcay, price: '', describe: '', id_area: 'mienbac', id_category: 'ct02', favourite: false},
+                {id_product: '008', name: 'Kẹo cu đơ Hà Tĩnh', url: keocudo, price: '', describe: '', id_area: 'mientrung', id_category: 'ct02', favourite: false},
+                {id_product: '009', name: 'Rượu Sim phú quốc', url: ruousim, price: '', describe: '', id_area: 'miennam', id_category: 'ct04', favourite: false},
+                {id_product: '010', name: 'Nem nắm giao thủy', url: nemnam, price: '', describe: '', id_area: 'mienbac', id_category: 'ct03', favourite: false},
+                {id_product: '011', name: 'Chả bò đà nẵng', url: chabo, price: '', describe: '', id_area: 'mientrung', id_category: 'ct03', favourite: false},
+                {id_product: '012', name: 'Kẹo mè xửng Huế', url: keomexung, price: '', describe: '', id_area: 'mientrung', id_category: 'ct02', favourite: false},
+                {id_product: '013', name: 'Bánh pía Sóc Trăng', url: banhpia, price: '', describe: '', id_area: 'miennam', id_category: 'ct02', favourite: false},
             ],
             allArea: [
-                {name: 'Miền Bắc', id_area: 'mienbac', path: '/sanpham/miennam', src: pic1, alt: ''},
-                {name: 'Miền Trung', id_area: 'mientrung', path: '/sanpham/mientrung', src: pic2, alt: ''},
-                {name: 'Miền Nam', id_area: 'miennam', path: '/sanpham/miennam', src: pic3, alt: ''},
-            ],
-            allCitys: [
-                {name: '01', id_city: '', id_area: ''},
-                {name: '02', id_city: '', id_area: ''},
-                {name: '03', id_city: '', id_area: ''},
-                {name: '04', id_city: '', id_area: ''},
-                {name: '05', id_city: '', id_area: ''},
-                {name: '06', id_city: '', id_area: ''},
-                {name: '07', id_city: '', id_area: ''},
-                {name: '08', id_city: '', id_area: ''},
-                {name: '09', id_city: '', id_area: ''},
-                {name: '10', id_city: '', id_area: ''},
-                {name: '11', id_city: '', id_area: ''},
-                {name: '12', id_city: '', id_area: ''},
-                {name: '13', id_city: '', id_area: ''},
-                {name: '14', id_city: '', id_area: ''},
-                {name: '15', id_city: '', id_area: ''},
-                {name: '16', id_city: '', id_area: ''},
-                {name: '17', id_city: '', id_area: ''},
-                {name: '18', id_city: '', id_area: ''},
-                {name: '19', id_city: '', id_area: ''},
-                {name: '20', id_city: '', id_area: ''},
-                {name: '21', id_city: '', id_area: ''},
-                {name: '22', id_city: '', id_area: ''},
-                {name: '23', id_city: '', id_area: ''},
-                {name: '24', id_city: '', id_area: ''},
-                {name: '25', id_city: '', id_area: ''},
-                {name: '26', id_city: '', id_area: ''},
-                {name: '27', id_city: '', id_area: ''},
-                {name: '28', id_city: '', id_area: ''},
-                {name: '29', id_city: '', id_area: ''},
-                {name: '30', id_city: '', id_area: ''},
-                {name: '31', id_city: '', id_area: ''},
-                {name: '32', id_city: '', id_area: ''},
-                {name: '33', id_city: '', id_area: ''},
-                {name: '34', id_city: '', id_area: ''},
-                {name: '35', id_city: '', id_area: ''},
-                {name: '36', id_city: '', id_area: ''},
-                {name: '37', id_city: '', id_area: ''},
-                {name: '38', id_city: '', id_area: ''},
-                {name: '39', id_city: '', id_area: ''},
-                {name: '40', id_city: '', id_area: ''},
-                {name: '41', id_city: '', id_area: ''},
-                {name: '42', id_city: '', id_area: ''},
-                {name: '43', id_city: '', id_area: ''},
-                {name: '44', id_city: '', id_area: ''},
-                {name: '45', id_city: '', id_area: ''},
-                {name: '46', id_city: '', id_area: ''},
-                {name: '47', id_city: '', id_area: ''},
-                {name: '48', id_city: '', id_area: ''},
-                {name: '49', id_city: '', id_area: ''},
-                {name: '50', id_city: '', id_area: ''},
-                {name: '51', id_city: '', id_area: ''},
-                {name: '52', id_city: '', id_area: ''},
-                {name: '53', id_city: '', id_area: ''},
-                {name: '54', id_city: '', id_area: ''},
-                {name: '55', id_city: '', id_area: ''},
-                {name: '56', id_city: '', id_area: ''},
-                {name: '57', id_city: '', id_area: ''},
-                {name: '58', id_city: '', id_area: ''},
-                {name: '59', id_city: '', id_area: ''},
-                {name: '60', id_city: '', id_area: ''},
-                {name: '61', id_city: '', id_area: ''},
-                {name: '62', id_city: '', id_area: ''},
-                {name: '63', id_city: '', id_area: ''},
-            ],
-            allCategory: [
-                {name: 'Rau củ', id_category: 'ct01', path: ''},
-                {name: 'bánh', id_category: 'ct02', path: ''},
-                {name: 'kẹo', id_category: 'ct03', path: ''},
+                {name: 'Miền Bắc', id_area: 'mienbac', path: 'mienbac', src: banhdauxanh, alt: 0},
+                {name: 'Miền Trung', id_area: 'mientrung', path: 'mientrung', src: keocudo, index: 1},
+                {name: 'Miền Nam', id_area: 'miennam', path: 'miennam', src: banhpia, index: 2},
             ],
             select: '',
             path: '/sanpham',
+            areaIsRunning: '',
+            productIsRunning: ''
         }
     },
     mutations:{
         updateSelect(state, [newSelect, newPath]){
             state.select = newSelect
             state.path = newPath
-        }
-    }
+        },
+        areaIsRunningUpdate(state,value){
+            state.areaIsRunning = value
+        },
+        productIsRunningUpdate: (state,value) => {
+            state.productIsRunning = value;
+          },
+    },
+
 })
 
 

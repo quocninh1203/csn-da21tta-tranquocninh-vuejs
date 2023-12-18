@@ -1,19 +1,23 @@
 <template>
-    <div class="item" v-for="item in product" :key="item.id_product">
-        <img src="">
+    <div @click="selectProduct(product.id_product)">
+    <router-link :to="{name: 'productdetail', 
+    params: { pathChildren: encodeURIComponent(`${product.id_area}-${product.id_product}`) }}">
+    <div class="item">
+        <img :src="product.url"  class="rounded">
         <div class="content-item">
-            <p class="name-content">{{ item.name }}</p>
+            <p class="name-content">{{ product.name }}</p>
             <div class="price">
-                <div>{{ item.price }} &#8363;</div>
+                <div>{{ product.price }} &#8363;</div>
             </div>
             <i class="unit">Đơn vị tính: 1 cái/1 đơn vị</i>
         </div>
+    </div>
+    </router-link>
     </div>
 </template>
 
 
 <script>
-
 export default{
     name: 'productItem',
     props:['product'],
@@ -21,8 +25,12 @@ export default{
         return{
             
         }
+    },
+    methods:{
+        selectProduct(value){
+            this.$store.commit('productIsRunningUpdate',value)
+        }
     }
-
 }
 </script>
 
@@ -32,10 +40,12 @@ export default{
     width: 250px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     border: 1px solid #ccc;
+    background-color: #fff;
 }
 .item img{
-    width: 100%;
+    width: 245px;
     height: 200px;
 }
 .item img:hover{

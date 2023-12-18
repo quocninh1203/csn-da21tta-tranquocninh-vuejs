@@ -56,7 +56,7 @@
   <style scoped>
   .carousel {
     width: 100vw; /* Điều chỉnh kích thước của carousel */
-    height: 79vh; /* Điều chỉnh chiều cao của carousel */
+    height: 86vh; /* Điều chỉnh chiều cao của carousel */
     margin: 0 auto; /* Căn giữa theo chiều ngang và chiều dọc */
     display: flex; /* Sử dụng display flex để căn giữa */
     flex-direction: column; /* Đảm bảo các phần tử trong carousel căn giữa theo chiều dọc */

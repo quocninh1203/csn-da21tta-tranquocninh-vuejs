@@ -1,8 +1,8 @@
 <template>
     <ul class="sub-navigation" :style="{width:width, backgroundColor:styleList.backgroundColor}">
         <li class="item-navigation" v-for="(item, index) in dropdownList" :key="index" 
-        :style="{fontWeight:styleList.fontWeight, fontSize:styleList.fontSize}" @click="select('/'+item.name,item.path)">
-            <router-link :to="item.path" class="RouterLink" :style="{color:styleList.color}" >{{ item.name }}</router-link>
+        :style="{fontWeight:styleList.fontWeight, fontSize:styleList.fontSize}" @click="selectArea('/'+item.name,item.path,item.id_area)">
+            <router-link :to="{name: 'producttotal', params: { pathParent: encodeURIComponent(item.path) }}" class="RouterLink" :style="{color:styleList.color}" >{{ item.name }}</router-link>
         </li>
     </ul>
 </template>
@@ -22,8 +22,9 @@ export default{
         }
     },
     methods:{
-        select(value,path){
+        selectArea(value,path,id_area){
             this.$store.commit('updateSelect',[ value, path])
+            this.$store.commit('areaIsRunningUpdate',id_area)
         }
     }
 

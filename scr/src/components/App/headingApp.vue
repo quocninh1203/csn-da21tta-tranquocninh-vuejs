@@ -7,18 +7,16 @@
         </div>
         <ul class="main-navigation">
             <li class="home-item">
-                <router-link to="/" class="RouterLink">Trang Chủ</router-link>
+                <router-link to="/" class="RouterLink">Trang Chủ
+                    <i class="el-icon-s-home"></i>
+                </router-link>
             </li>
             <li class="catagory-item menuDropdown">
                 <RouterLink to="/sanpham" class="RouterLink" @click="resetSelect">Sản Phẩm
-                    <i class="ti-angle-down down"></i>
                 </RouterLink>
-                <menuDropdown class="Dropdown" :dropdownList = categoryList :styleList = styles :width = category_width></menuDropdown>
             </li>
-            <li class="citys-item menuDropdown">
-                <RouterLink to="/sanpham" class="RouterLink" @click="resetSelect">Đặc Sản Vùng Miền
-                    <i class="ti-angle-down down"></i>
-                </RouterLink>
+            <li class="citys-item menuDropdown">Đặc Sản Vùng Miền
+                    <i class="el-icon-arrow-down"></i>
                 <menuDropdown class="Dropdown" :dropdownList = areaList :styleList = styles></menuDropdown>
             </li>
             <li class="post-item">
@@ -26,12 +24,12 @@
             </li>
             <li class="account-item icon">
                 <router-link to="/" class="RouterLink">
-                    <i class="ti-user"></i>
+                    <i class="el-icon-user-solid"></i>
                 </router-link>
             </li>
             <li class="favourite-item icon">
-                <router-link to="/" class="RouterLink">
-                    <i class="ti-bookmark"></i>
+                <router-link to="/your-favourite" class="RouterLink">
+                    <i class="el-icon-collection-tag"></i>
                 </router-link>
             </li>
         </ul>
@@ -83,10 +81,7 @@ export default{
     text-decoration: none;
     color: rgb(87, 32, 24);
 }
-.down{
-    font-size: 12px;
-    margin-left: 2px;
-}
+
 .menuDropdown{
     position: relative;
 }
