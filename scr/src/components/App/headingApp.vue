@@ -8,7 +8,7 @@
         <ul class="main-navigation">
             <li class="home-item">
                 <router-link to="/" class="RouterLink">Trang Chủ
-                    <i class="el-icon-s-home"></i>
+                    <v-icon icon="el-icon-s-home"></v-icon>
                 </router-link>
             </li>
             <li class="catagory-item menuDropdown">
@@ -16,7 +16,7 @@
                 </RouterLink>
             </li>
             <li class="citys-item menuDropdown">Đặc Sản Vùng Miền
-                    <i class="el-icon-arrow-down"></i>
+                    <v-icon icon="el-icon-arrow-down"></v-icon>
                 <menuDropdown class="Dropdown" :dropdownList = areaList :styleList = styles></menuDropdown>
             </li>
             <li class="post-item">
@@ -24,12 +24,12 @@
             </li>
             <li class="account-item icon">
                 <router-link to="/" class="RouterLink">
-                    <i class="el-icon-user-solid"></i>
+                    <v-icon icon="el-icon-user-solid"></v-icon>
                 </router-link>
             </li>
             <li class="favourite-item icon">
                 <router-link to="/your-favourite" class="RouterLink">
-                    <i class="el-icon-collection-tag"></i>
+                    <v-icon icon="el-icon-collection-tag"></v-icon>
                 </router-link>
             </li>
         </ul>
@@ -90,6 +90,8 @@ export default{
     display: flex;
     justify-content: space-between;
     background-color: #fff;
+    background-image: url(https://3.bp.blogspot.com/-k8W7UwkacXw/U-J-qTkel1I/AAAAAAAAGdE/T-69E0WNcJk/s1600/repeating-vintage-paper-background.jpg);
+    background-repeat: repeat-x;
     align-items: center;
 }
 .namespace{

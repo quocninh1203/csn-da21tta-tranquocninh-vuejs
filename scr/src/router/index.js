@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import allProduct from '../views/AllProductView.vue'
 import favourite from '../views/FavouriteView.vue'
+import administrator from '@/views/AdminiStratorView.vue'
 import ProductDetail from '@/views/ProductDetailView.vue'
 const routes = [
   {
@@ -14,6 +15,11 @@ const routes = [
     path: '/your-favourite',
     name: 'favourite',
     component: favourite
+  },
+  {
+    path: '/administrator',
+    name: 'administrator',
+    component: administrator
   },
   {
     path: '/sanpham',

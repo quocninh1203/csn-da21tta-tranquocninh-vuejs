@@ -1,27 +1,9 @@
 <template>
-    <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-2" style="background-color:lavender;">
-            <nav class="navbar bg-light">
-                <ul class="navbar-nav">
-                  <li class="nav-item" v-for="item in getMenuArea" :key="item.index">
-                    <router-link class="nav-link" :to="item.path">{{ item.name }}</router-link>
-                  </li>
-                </ul>
-              </nav>
-          </div>
-          <div class="col-sm-10" style="background-color:lavenderblush;">
-            <loginAccounts></loginAccounts>
-          </div>
-        </div>
-    </div>
-<!--  -->
-
+<h1>ẹhdiasd</h1>
 </template>
 
 
 <script>
-import loginAccounts from '@/components/loginAccounts.vue'
 
 export default {
     computed:{
@@ -30,7 +12,7 @@ export default {
         // }
     },
     components:{
-      loginAccounts
+      
     }
 }
 </script>

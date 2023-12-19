@@ -64,6 +64,8 @@ export default{
 .all{
     justify-content: center;
     background-color: #fff;
+    background-image: url(https://i.pinimg.com/474x/a2/d2/d4/a2d2d404c591e0cc4c5da4d6e4585e0d.jpg);
+    background-repeat: repeat;
     margin: auto;
 }
 </style>

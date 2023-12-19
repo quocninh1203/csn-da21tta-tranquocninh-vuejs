@@ -1,94 +1,79 @@
 <template>
-    <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="120px" class="demo-ruleForm">
-        <el-form-item label="Password" prop="pass">
-          <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
-        </el-form-item>
-        <el-form-item label="Confirm" prop="checkPass">
-          <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
-        </el-form-item>
-        <el-form-item label="Age" prop="age">
-          <el-input v-model.number="ruleForm.age"></el-input>
-        </el-form-item>
-        <el-form-item>
-          <el-button type="primary" @click="submitForm('ruleForm')">Submit</el-button>
-          <el-button @click="resetForm('ruleForm')">Reset</el-button>
-        </el-form-item>
-      </el-form>
+  <v-container class="d-flex justify-center w-100" v-if="this.$store.state.isLogin">
+    <v-sheet class="bg-deep-purple pa-12 w-50" rounded>
+      <v-card class="mx-auto px-6 py-8" max-width="344">
+        <v-form
+          v-model="form"
+          @submit.prevent="onSubmit"
+        >
+          <v-text-field
+            v-model="nameuser"
+            :readonly="loading"
+            :rules="[required]"
+            class="mb-2"
+            clearable
+            label="Tài khoản"
+          ></v-text-field>
+  
+          <v-text-field
+            v-model="password"
+            :readonly="loading"
+            :rules="[required]"
+            clearable
+            label="Mật khẩu"
+            placeholder="Enter your password"
+          ></v-text-field>
+  
+          <br>
+  
+          <v-btn
+            :disabled="!form"
+            :loading="loading"
+            block
+            color="success"
+            size="large"
+            type="submit"
+            variant="elevated"
+          >
+            Sign In
+          </v-btn>
+        </v-form>
+      </v-card>
+    </v-sheet>
+  </v-container>
 </template>
 
+
 <script>
+  export default {
+    data: () => ({
+      form: false,
+      nameuser: null,
+      password: null,
+      loading: false,
+    }),
 
-export default{
-    data() {
-      var checkAge = (rule, value, callback) => {
-        if (!value) {
-          return callback(new Error('Please input the age'));
-        }
-        setTimeout(() => {
-          if (!Number.isInteger(value)) {
-            callback(new Error('Please input digits'));
-          } else {
-            if (value < 18) {
-              callback(new Error('Age must be greater than 18'));
-            } else {
-              callback();
-            }
-          }
-        }, 1000);
-      };
-      var validatePass = (rule, value, callback) => {
-        if (value === '') {
-          callback(new Error('Please input the password'));
-        } else {
-          if (this.ruleForm.checkPass !== '') {
-            this.$refs.ruleForm.validateField('checkPass');
-          }
-          callback();
-        }
-      };
-      var validatePass2 = (rule, value, callback) => {
-        if (value === '') {
-          callback(new Error('Please input the password again'));
-        } else if (value !== this.ruleForm.pass) {
-          callback(new Error('Two inputs don\'t match!'));
-        } else {
-          callback();
-        }
-      };
-      return {
-        ruleForm: {
-          pass: '',
-          checkPass: '',
-          age: ''
-        },
-        rules: {
-          pass: [
-            { validator: validatePass, trigger: 'blur' }
-          ],
-          checkPass: [
-            { validator: validatePass2, trigger: 'blur' }
-          ],
-          age: [
-            { validator: checkAge, trigger: 'blur' }
-          ]
-        }
-      };
-    },
     methods: {
-      submitForm(formName) {
-        this.$refs[formName].validate((valid) => {
-          if (valid) {
-            alert('submit!');
-          } else {
-            console.log('error submit!!');
-            return false;
-          }
-        });
-      },
-      resetForm(formName) {
-        this.$refs[formName].resetFields();
-      }
-    }
-  }
+      onSubmit () {
+        if (!this.form) return
 
+        this.loading = true
+// this.nameuser == this.$store.state.user
+        setTimeout(() => {
+          this.loading = false
+          if (this.nameuser == this.$store.state.user && this.password == this.$store.state.pass){
+            this.$store.state.isAdmin = true
+            this.$store.state.isLogin = false
+          }
+          else {
+            this.nameuser = null
+            this.password = null
+          }
+        }, 2000)
+      },
+      required (v) {
+        return !!v || 'Field is required'
+      },
+    },
+  }
 </script>
