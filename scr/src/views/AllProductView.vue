@@ -1,22 +1,20 @@
 <template>
-    <div class="name">
-        <div>
-            <router-link to="/sanpham" class="RouterLink" @click="resetSelect">Sản Phẩm</router-link>
-            <router-link :to="this.$store.state.path" class="RouterLink">{{ this.$store.state.select }}</router-link>
-        </div>
+    <div class="padding">
+        <paddingView></paddingView>
     </div>
     <div :style="{display: display}" class="all">
         <productList :products = getAllproduct :width = width></productList>
     </div>
-
 </template>
 
 <script>
+import paddingView from '@/components/paddingView.vue'
 import productList from '@/components/productList.vue'
 export default{
     name: 'allProductView',
     components:{
-        productList
+        productList,
+        paddingView
     },
     computed:{
         display(){
@@ -36,31 +34,21 @@ export default{
             width: '1310px'
         }
     },
-    methods:{
-        resetSelect(){
-            this.$store.commit('updateSelect',['','/sanpham'])
-        }
-    }
+
 }
 
 </script>
 
 <style scoped>
-.name{
+.padding{
     display: flex;
     align-items: center;
     height: 100px;
     width: 100%;
     background-color: rgb(87, 32, 24);
 }
-.name div{
-    padding-left: 50px;
-    font-size: 30px;
-    text-transform: uppercase;
-}
-.RouterLink{
-    color: #fff;
-}
+
+
 .all{
     justify-content: center;
     background-color: #fff;

@@ -1,8 +1,7 @@
 <template>
-    <div @click="selectProduct(product.id_product)">
     <router-link :to="{name: 'productdetail', 
     params: { pathChildren: encodeURIComponent(`${product.id_area}-${product.id_product}`) }}">
-    <div class="item">
+    <div class="item" @click="selectProduct(product.id_product)">
         <img :src="product.url"  class="rounded">
         <div class="content-item">
             <p class="name-content">{{ product.name }}</p>
@@ -13,7 +12,6 @@
         </div>
     </div>
     </router-link>
-    </div>
 </template>
 
 

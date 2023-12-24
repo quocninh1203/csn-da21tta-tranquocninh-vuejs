@@ -41,7 +41,7 @@ export default{
     data: () => ({
       rules: [
         value => !!value || 'Required.',
-        value => (value || '').length <= 100 || 'Max 100 characters',
+        value => (value || '').length <= 500 || 'Max 100 characters',
       ],
       info: [
         'Id sản phẩm',
@@ -50,12 +50,12 @@ export default{
         'Giá tham khảo',
       ],
       addProduct:{
-        name: '',
         id_product: '',
-        price: '',
+        name: '',
         url: '',
-        id_area: '',
+        price: '',
         describe: '',
+        id_area: '',
         favourite: false
       },
       tam:null,
@@ -75,12 +75,8 @@ export default{
         this.tam = this.addProduct
         this.loading = true
         this.$store.dispatch('addData', this.tam);
-        this.addProduct.name = ''
-        this.addProduct.id_product = ''
-        this.addProduct.id_are = ''
-        this.addProduct.price = ''
-        this.addProduct.url = ''
-        this.addProduct.describe = ''
+        console.log(this.tam);
+
       },
     }
 }

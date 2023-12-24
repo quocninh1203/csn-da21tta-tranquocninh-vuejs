@@ -1,9 +1,16 @@
 <template>
-    <h1 class="test">{{ newdata[0].name }}</h1>
+  <div class="padding">
+    <paddingView></paddingView>
+  </div>
+
 </template>
 <script>
+import paddingView from '@/components/paddingView.vue'
 export default{
   name: 'productDetail',
+  components:{
+    paddingView
+  },
   computed:{
     getAll(){
       return this.$store.state.allProduct
@@ -19,7 +26,12 @@ export default{
 </script>   
 
 <style scoped>
-.test{
-    background-color: aqua;
+.padding{
+  display: flex;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  background-color: rgb(87, 32, 24);
 }
+
 </style>
