@@ -1,7 +1,7 @@
 <template>
     <ul class="sub-navigation" :style="{width:width, backgroundColor:styleList.backgroundColor}">
         <li class="item-navigation" v-for="(item, index) in dropdownList" :key="index" 
-        :style="{fontWeight:styleList.fontWeight, fontSize:styleList.fontSize}" @click="selectArea('/'+item.name,item.path,item.id_area)">
+        :style="{fontWeight:styleList.fontWeight, fontSize:styleList.fontSize}" @click="chosseSelectArea(item.name,item.path,item.id_area)">
             <router-link :to="{name: 'producttotal', params: { pathParent: encodeURIComponent(item.path) }}" class="RouterLink" :style="{color:styleList.color}" >{{ item.name }}</router-link>
         </li>
     </ul>
@@ -21,9 +21,17 @@ export default{
 
         }
     },
+    computed:{
+        menuList(){
+            return this.$store.state.allMenu
+        }
+    },
     methods:{
-        selectArea(value,path,id_area){
-            this.$store.commit('updateSelect',[ value, path])
+        chosseSelectArea(value,path,id_area){
+            this.$store.commit('updateSelect',['/ '+this.menuList[0].name, this.menuList[0].path])
+            this.$store.commit('updateAreaSelect',['/ '+value,path])
+            this.$store.commit('updateProductSelect',['',''])
+
             this.$store.commit('areaIsRunningUpdate',id_area)
         }
     }
@@ -37,10 +45,7 @@ export default{
 .sub-navigation{
     position: absolute;
     z-index: 1;
-    background-color: #fff;
     list-style: none;
-    top: 90px;
-    left: 0;
     width: 100%;
     opacity: 1;
     padding: 0;margin: 0;
@@ -51,10 +56,10 @@ export default{
 }
 .RouterLink{
     text-decoration: none;
-    color: rgb(87, 32, 24);
+    color: #fff;
 }
 .item-navigation:hover .RouterLink{
-    color:brown;
+    color:yellow;
 }
 
 </style>

@@ -1,8 +1,16 @@
 <template>
-    <div class="list-item" :style="{width: width}">
-        <template v-for="item in products" :key="item.id_product">
+    <div class="list-item">
+        <v-container  class="pa-2 one" fluid>
+            <v-row dense>
+                <v-col v-for="item in products" :key="item.id_product" cols="auto" md="2">
+                    <productItem :product=item></productItem>
+                </v-col>
+            </v-row>
+        </v-container>
+        <!-- <template v-for="item in products" :key="item.id_product">
             <productItem :product=item></productItem>
-        </template>
+        </template> -->
+        <!-- :style="{width: width}" -->
     </div>
 </template>
 
@@ -35,5 +43,8 @@ export default {
     gap: 10px;
     min-width: 810px;
     margin: 20px auto;
+}
+.one{
+    width: 1240px;
 }
 </style>

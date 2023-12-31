@@ -56,7 +56,8 @@ export default{
         price: '',
         describe: '',
         id_area: '',
-        favourite: false
+        favourite: false,
+        time: ''
       },
       tam:null,
       loading: false

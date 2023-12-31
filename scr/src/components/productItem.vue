@@ -1,17 +1,30 @@
 <template>
-    <router-link :to="{name: 'productdetail', 
-    params: { pathChildren: encodeURIComponent(`${product.id_area}-${product.id_product}`) }}">
-    <div class="item" @click="selectProduct(product.id_product)">
-        <img :src="product.url"  class="rounded">
-        <div class="content-item">
-            <p class="name-content">{{ product.name }}</p>
-            <div class="price">
-                <div>{{ product.price }} &#8363;</div>
+<router-link :to="{name: 'productdetail', 
+    params: { pathChildren: encodeURIComponent(`${product.id_area}-${product.id_product}`)}}"
+    class="custom-link">
+    <v-card class="pb-3" border flat width="200" @click="selectProduct(product,product.name)">
+                        <!-- Imgage product -->
+        <v-img :src="product.url"></v-img>
+                        <!-- Title product -->
+        <v-list-item class="mb-2" :subtitle="product.id_product">
+                        <!-- Name product -->
+            <template v-slot:title>
+                <strong class="text-h6 mb-2">{{ product.name }}</strong>
+            </template>
+        </v-list-item>
+                        <!-- Price and button readmore -->
+        <div class="d-flex justify-space-between px-4">
+            <div class="d-flex align-center text-caption text-medium-emphasis me-1">
+                        <!-- Price -->
+                <v-icon icon="el-icon-money" start></v-icon>
+                <div class="text-truncate">{{ product.price }}&#8363;</div>
             </div>
-            <i class="unit">Đơn vị tính: 1 cái/1 đơn vị</i>
+                        <!-- Button readmore -->
+             <v-btn border flat size="small" class="text-none" text="Xem thêm">
+            </v-btn>
         </div>
-    </div>
-    </router-link>
+    </v-card>
+</router-link>
 </template>
 
 
@@ -21,18 +34,30 @@ export default{
     props:['product'],
     data(){
         return{
-            
+
         }
     },
     methods:{
-        selectProduct(value){
-            this.$store.commit('productIsRunningUpdate',value)
-        }
+        selectProduct(value1,value2){
+            this.$store.commit('productIsRunningUpdate',value1)
+
+            this.$store.commit('updateProductSelect',['/ '+value2,value1.id_product])
+            console.log(this.$store.state.productIsRunning);
+        },
+    },
+    computed:{
+    menuList(){
+        return this.$store.state.allMenu
     }
+    },
 }
 </script>
 
 <style scoped>
+.custom-link{
+    text-decoration: none;
+}
+
 .item{
     height: 350px;
     width: 250px;
@@ -51,7 +76,7 @@ export default{
     cursor: pointer;
 }
 .item:hover{
-    border: 1px solid rgb(87, 32, 24);
+    border: 1px solid #1B5E20;
 }
 .content-item{
     flex: 1;
@@ -63,7 +88,7 @@ export default{
 .name-content{
     flex: 2;
     font-size: 20px;
-    color: rgb(87, 32, 24);
+    color: #1B5E20;
     font-weight: bolder;
     text-align: center;
     text-transform: capitalize;
@@ -78,16 +103,13 @@ export default{
     height: 100%;
     width: 150px;
     text-align: center;
-    border: 1px solid  rgb(87, 32, 24);
-    background-color: rgb(87, 32, 24);
+    border: 1px solid  #1B5E20;
+    background-color: #1B5E20;
 }   
 .price div:hover{
     cursor: pointer;
-    color:  rgb(87, 32, 24);
+    color:  #1B5E20;
     background-color: #fff;
 }
-.unit{
-    flex: 1;
-    color: #000;
-}
+
 </style>

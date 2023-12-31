@@ -1,35 +1,32 @@
 <template>
     <div class="main-headingApp">
-        <div class="namespace">
-            <RouterLink to="/">
-                <!-- <img alt="logo" class="logo"> -->
-            </RouterLink>
-        </div>
-        <ul class="main-navigation">
-            <li class="home-item">
-                <router-link to="/" class="RouterLink">Trang Chủ
+        <ul class="main-navigation bg-green-darken-4">
+            <li class="home-item" @click="resetSelect">
+                <router-link to="/" class="RouterLink">
                     <v-icon icon="el-icon-s-home"></v-icon>
+                    Trang Chủ
                 </router-link>
             </li>
-            <li class="catagory-item menuDropdown">
-                <RouterLink to="/sanpham" class="RouterLink" @click="resetSelect">Sản Phẩm
+            <li class="catagory-item menuDropdown" @click="chosseSelect(0)">
+                <RouterLink to="/sanpham" class="RouterLink">Sản Phẩm
                 </RouterLink>
             </li>
             <li class="citys-item menuDropdown">Đặc Sản Vùng Miền
                     <v-icon icon="el-icon-arrow-down"></v-icon>
-                <menuDropdown class="Dropdown" :dropdownList = areaList :styleList = styles></menuDropdown>
+                <menuDropdown class="Dropdown bg-green-darken-4" :dropdownList = areaList :styleList = styles></menuDropdown>
             </li>
             <li class="post-item">
-                <router-link to="/" class="RouterLink">Tin Tức</router-link>
+                <router-link to="#" class="RouterLink">Tin Tức</router-link>
             </li>
             <li class="account-item icon">
-                <router-link to="/" class="RouterLink">
+                <router-link to="#" class="RouterLink">
                     <v-icon icon="el-icon-user-solid"></v-icon>
                 </router-link>
             </li>
-            <li class="favourite-item icon">
-                <router-link to="/your-favourite" class="RouterLink">
+            <li class="favourite-item icon" @click="chosseSelect(3)">
+                <router-link to="/yourfavourite" class="RouterLink">
                     <v-icon icon="el-icon-collection-tag"></v-icon>
+                    Yêu Thích
                 </router-link>
             </li>
         </ul>
@@ -64,12 +61,23 @@ export default{
         },
         categoryList(){
             return this.$store.state.allCategory
+        },
+        menuList(){
+            return this.$store.state.allMenu
         }
     },
     methods:{
+        chosseSelect(index){
+            this.$store.commit('updateSelect',['/ '+this.menuList[index].name,this.menuList[index].path])
+            this.$store.commit('updateAreaSelect',['',''])
+            this.$store.commit('updateProductSelect',['',''])
+        },
         resetSelect(){
-            this.$store.commit('updateSelect',['','/sanpham'])
+            this.$store.commit('updateSelect',['',''])
+            this.$store.commit('updateAreaSelect',['',''])
+            this.$store.commit('updateProductSelect',['',''])
         }
+
     }
    
 }
@@ -77,64 +85,54 @@ export default{
 
 
 <style scoped>
+
 .RouterLink{
     text-decoration: none;
-    color: rgb(87, 32, 24);
+    color: #fff;
 }
-
+.RouterLink:hover{
+    color: yellow;
+}
 .menuDropdown{
     position: relative;
 }
 
 .main-headingApp{
-    display: flex;
-    justify-content: space-between;
     background-color: #fff;
     background-image: url(https://3.bp.blogspot.com/-k8W7UwkacXw/U-J-qTkel1I/AAAAAAAAGdE/T-69E0WNcJk/s1600/repeating-vintage-paper-background.jpg);
-    background-repeat: repeat-x;
-    align-items: center;
-}
-.namespace{
-    margin-left: 20px;
-}
-.main-navigation,ul{
-    display: flex;
-    list-style-type: none;
-    margin-bottom: 0;
-    padding: 0 80px 0 20px;
-}
-.main-navigation>li{
-    padding: 32px 20px;
-    font-size: 18px;
-    font-weight: bolder;
-    text-transform: uppercase;
-}
-.icon{
+    background-repeat: repeat;
+    height: 100px;
+    width: 100vw;
     position: relative;
 }
 
-.icon i{
-    font-size: 20px;
-    font-weight: bolder;
-}
-.icon::before{
-    content: "";
-    height: 25%;
-    width: 1px;
-    background-color: #000;
+.main-navigation{
     z-index: 1;
-    left: 0;
     position: absolute;
+    top: 70px;
+    right: 50%;
+    transform: translateX(50%);
+    display: flex;
+    list-style-type: none;
+    justify-content:space-between;
+    align-items: center;
+    width: 60%;
+    height: 60px;
+    padding: 0 60px;
+    margin-bottom: 0;
+    border-radius: 40px;
+}
+.main-navigation > li:hover{
+    color: yellow;
 }
 .Dropdown{
     display: none;
+    top: 25px;
 }
 .main-navigation>li:hover .Dropdown{
     display: block;
 }
-.main-navigation>li:hover .RouterLink{
-    color:brown;
-}
+
 
 
 </style>

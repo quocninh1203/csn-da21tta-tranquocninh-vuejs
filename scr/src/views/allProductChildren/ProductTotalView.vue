@@ -1,6 +1,10 @@
+<!-- {{ this.name[0].name }} -->
 <template>
   <div class="padding">
     <paddingView></paddingView>
+  </div>
+  <div class="title">
+    <h2 :style="{ textTransform: 'capitalize' }">Sản phẩm {{ this.name[0].name }}</h2>
   </div>
   <div class="view">
     <productList :products = newdata :width = width></productList>
@@ -30,6 +34,18 @@ export default{
     },
     newdata(){
       return this.getAll.filter(product => product.id_area == this.getAreaIsSelect)
+    },
+    getSelect(){
+      return this.$store.state.select
+    },
+    getAllMenu(){
+      return this.$store.state.allMenu
+    },
+    newMenu(){
+      return this.getAllMenu.filter(item => item.name == this.getSelect)
+    },
+    name(){
+      return this.$store.state.allArea.filter(item => item.id_area == this.getAreaIsSelect)
     }
   },
 
@@ -40,17 +56,30 @@ export default{
 .padding{
   display: flex;
   align-items: center;
-  height: 100px;
+  height: 80px;
   width: 100%;
-  background-color: rgb(87, 32, 24);
+  background-color: #fff;
 }
 .view{
   display: flex;
   justify-content: center;
   background-color: #fff;
-  background-image: url(https://i.pinimg.com/474x/a2/d2/d4/a2d2d404c591e0cc4c5da4d6e4585e0d.jpg);
-  background-repeat: repeat;
   margin: auto;
 }
-
+.title{
+  width: 100vw;
+  height: auto;
+  border-top: 1px solid #c0c0c0;
+}
+.title h2{
+  background-color: #1B5E20;
+  color: #fff;
+  height: 50px;
+  width: 500px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
 </style>
