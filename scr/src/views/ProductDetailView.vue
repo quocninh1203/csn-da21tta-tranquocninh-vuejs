@@ -81,7 +81,7 @@
       <v-col cols="12">
         <h3>Mô tả sản phẩm</h3>
         <p>
-          Mô tả chi tiết về sản phẩm sẽ được đặt ở đây. Bạn có thể thêm nhiều đoạn văn bản, danh sách, hình ảnh, v.v.
+         {{ getProductIsSelect.describe }}
         </p>
       </v-col>
     </v-row>

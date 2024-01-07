@@ -27,7 +27,10 @@ export const store = createStore({
                 {id_product: 'banhcay', name: 'Bánh cáy Thái bình', url: banhcay, price: '', describe: '', id_area: 'mienbac', favourite: false, time: ''},
                 {id_product: 'keocudo', name: 'Kẹo cu đơ Hà Tĩnh', url: keocudo, price: '50000', describe: '', id_area: 'mientrung', favourite: false, time: ''},
                 {id_product: 'ruousim', name: 'Rượu Sim phú quốc', url: ruousim, price: '', describe: '', id_area: 'miennam', favourite: false, time: ''},
-                {id_product: 'nemnam', name: 'Nem nắm giao thủy', url: nemnam, price: '69000', describe: '', id_area: 'mienbac', favourite: false, time: ''},
+                {id_product: 'nemnam', name: 'Nem nắm giao thủy', url: nemnam, price: '69000', 
+                    describe: 'Nem nắm Giao Thủy là một món ăn đặc sản của huyện Xuân Thủy ngày xưa, huyện Giao Thủy và huyện Xuân trường ngày nay, tỉnh Nam Định, Việt Nam. Nem có hai loại sống và chín.', 
+                    id_area: 'mienbac', favourite: false, time: ''},
+
                 {id_product: 'chabo', name: 'Chả bò đà nẵng', url: chabo, price: '', describe: '', id_area: 'mientrung', favourite: false, time: ''},
                 {id_product: 'keomexung', name: 'Kẹo mè xửng Huế', url: keomexung, price: '', describe: '', id_area: 'mientrung', favourite: false, time: ''},
                 {id_product: 'banhpia', name: 'Bánh pía Sóc Trăng', url: banhpia, price: '10000', describe: '', id_area: 'miennam', favourite: false, time: ''},
