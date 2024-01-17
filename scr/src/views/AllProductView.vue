@@ -1,11 +1,26 @@
 <template>
     <div class="padding">
         <paddingView :name = name></paddingView>
+        <v-card-text>
+            <v-text-field
+              :loading="loading"
+              density="compact"
+              variant="solo"
+              label="Nhập giá trị cần tìm"
+              single-line
+              hide-details
+              v-model="search"
+              width = 200
+              class="dcm"
+              v-if="block"
+            ></v-text-field>
+        </v-card-text>
+        <v-btn icon="el-icon-search" @click="block = !block">
+        </v-btn>
     </div>
     <div class="title">
         <h2 :style="{ textTransform: 'capitalize' }">Tất cả sản phẩm</h2>
     </div>
-    <div><input type="text" v-model="search" placeholder="Nhập giá trị"></div>
     <div :style="{display: display}" class="all">
         <productList :products = getAllproduct :width = width></productList>
     </div>
@@ -31,7 +46,8 @@ export default{
         return{
             width: '1310px',
             name: `/ ${this.$store.state.allMenu[0].name}`,
-            search: ''
+            search: '',
+            block: false
         }
     },
 
@@ -40,6 +56,10 @@ export default{
 </script>
 
 <style scoped>
+.dcm{
+    width: 200px;
+    float: right;
+}
 .padding{
     display: flex;
     align-items: center;

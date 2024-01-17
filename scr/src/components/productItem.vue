@@ -1,6 +1,6 @@
 <template>
 <router-link :to="{name: 'productdetail', 
-    params: { pathChildren: encodeURIComponent(`${product.id_area}-${product.id_product}`)}}"
+    params: { pathChildren: x}}"
     class="custom-link">
     <v-card class="pb-3" border flat width="200" @click="selectProduct(product,product.name)">
                         <!-- Imgage product -->
@@ -34,7 +34,7 @@ export default{
     props:['product'],
     data(){
         return{
-
+            x: encodeURIComponent(`${this.product.id_area}-${this.product.id_product}`)
         }
     },
     methods:{

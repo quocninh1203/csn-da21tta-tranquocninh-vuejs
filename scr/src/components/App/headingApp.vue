@@ -19,7 +19,7 @@
                 <router-link to="#" class="RouterLink">Tin Tức</router-link>
             </li>
             <li class="account-item icon">
-                <router-link to="#" class="RouterLink">
+                <router-link to="/administrator" class="RouterLink">
                     <v-icon icon="el-icon-user-solid"></v-icon>
                 </router-link>
             </li>
