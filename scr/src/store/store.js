@@ -13,6 +13,21 @@ import banhpia from '../assets/imgs/product/banh-pia.jpg'
 import keomexung from '../assets/imgs/product/keo-me-xung.jpg'
 import ruousim from '../assets/imgs/product/ruou-sim-phu-quoc.png'
 import chabo from '../assets/imgs/product/cha-bo-danang.jpg'
+import banhhatbang from '../assets/imgs/product/banh-quy-hat-bang-con-dao.png'
+import comchay from '../assets/imgs/product/com-chay-cha-bong-250g.jpg'
+import duongthotnot from '../assets/imgs/product/duong-thot-not-an-giang.png'
+import hatdieu from '../assets/imgs/product/hat-dieu-rang-muoi.jpg'
+import matnho from '../assets/imgs/product/mat-nho-ninh-thuan.jpg'
+import matong from '../assets/imgs/product/mat-ong-u-minh.png'
+import muckho from '../assets/imgs/product/muc-kho-dac-san-chinh-goc-da-nang.jpg'
+import muoitom from '../assets/imgs/product/muoi-tom-tay-ninh.jpg'
+import nemdongthap from '../assets/imgs/product/nem-lai-vung-dong-thap.png'
+import yensao from '../assets/imgs/product/yen-sao-khanh-hoa.png'
+
+
+
+
+
 
 // tạo một instance store mới
 export const store = createStore({
@@ -30,10 +45,24 @@ export const store = createStore({
                 {id_product: 'nemnam', name: 'Nem nắm giao thủy', url: nemnam, price: '69000', 
                     describe: 'Nem nắm Giao Thủy là một món ăn đặc sản của huyện Xuân Thủy ngày xưa, huyện Giao Thủy và huyện Xuân trường ngày nay, tỉnh Nam Định, Việt Nam. Nem có hai loại sống và chín.', 
                     id_area: 'mienbac', favourite: false, time: ''},
+                
+                    {id_product: 'hatdieu', name: 'Đường Thốt Nốt', url: hatdieu, price: '', describe: '', id_area: 'miennam', favourite: false, time: ''},
+                    {id_product: 'matnho', name: 'Đường Thốt Nốt', url: matnho, price: '', describe: '', id_area: 'miennam', favourite: false, time: ''},
+                    {id_product: 'matong', name: 'Đường Thốt Nốt', url: matong, price: '', describe: '', id_area: 'miennam', favourite: false, time: ''},
+                    {id_product: 'muckho', name: 'Đường Thốt Nốt', url: muckho, price: '', describe: '', id_area: 'miennam', favourite: false, time: ''},
+                    {id_product: 'muoitom', name: 'Đường Thốt Nốt', url: muoitom, price: '', describe: '', id_area: 'miennam', favourite: false, time: ''},
+                    {id_product: 'nemdongthap', name: 'Đường Thốt Nốt', url: nemdongthap, price: '', describe: '', id_area: 'miennam', favourite: false, time: ''},
+                    {id_product: 'yensao', name: 'Đường Thốt Nốt', url: yensao, price: '', describe: '', id_area: 'miennam', favourite: false, time: ''},
 
+
+
+                {id_product: 'duongthotnot', name: 'Đường Thốt Nốt', url: duongthotnot, price: '', describe: '', id_area: 'miennam', favourite: false, time: ''},
+                {id_product: 'banhhatbang', name: 'Bánh Quy Hạt Bàng Côn Đảo', url: banhhatbang, price: '', describe: '', id_area: 'miennam', favourite: false, time: ''},
                 {id_product: 'chabo', name: 'Chả bò đà nẵng', url: chabo, price: '', describe: '', id_area: 'mientrung', favourite: false, time: ''},
                 {id_product: 'keomexung', name: 'Kẹo mè xửng Huế', url: keomexung, price: '', describe: '', id_area: 'mientrung', favourite: false, time: ''},
                 {id_product: 'banhpia', name: 'Bánh pía Sóc Trăng', url: banhpia, price: '10000', describe: '', id_area: 'miennam', favourite: false, time: ''},
+                {id_product: 'comchay', name: 'Cơm Cháy Chà Bông', url: comchay, price: '', describe: '', id_area: 'miennam', favourite: false, time: ''},
+
             ],
             allArea: [
                 {name: 'Miền Bắc', id_area: 'mienbac', path: 'mienbac', src: banhdauxanh, index: 0},

@@ -5,6 +5,7 @@
     <div class="title">
         <h2 :style="{ textTransform: 'capitalize' }">Tất cả sản phẩm</h2>
     </div>
+    <div><input type="text" v-model="search" placeholder="Nhập giá trị"></div>
     <div :style="{display: display}" class="all">
         <productList :products = getAllproduct :width = width></productList>
     </div>
@@ -20,15 +21,17 @@ export default{
         paddingView
     },
     computed:{
-
         getAllproduct(){
+            if(this.search != '')
+                return this.$store.state.allProduct.filter(product => product.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(this.search.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")) == true)
             return this.$store.state.allProduct
         }
     },
     data(){
         return{
             width: '1310px',
-            name: `/ ${this.$store.state.allMenu[0].name}`
+            name: `/ ${this.$store.state.allMenu[0].name}`,
+            search: ''
         }
     },
 
