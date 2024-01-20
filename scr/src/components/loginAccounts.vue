@@ -64,10 +64,12 @@
           if (this.nameuser == this.$store.state.user && this.password == this.$store.state.pass){
             this.$store.state.isAdmin = true
             this.$store.state.isLogin = false
+            alert("Đăng nhập thành công!");
           }
           else {
             this.nameuser = null
             this.password = null
+            alert("Sai tài khoản hoặc mật khẩu!");
           }
         }, 2000)
       },

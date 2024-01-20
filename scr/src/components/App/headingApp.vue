@@ -15,7 +15,7 @@
                     <v-icon icon="el-icon-arrow-down"></v-icon>
                 <menuDropdown class="Dropdown bg-green-darken-4" :dropdownList = areaList :styleList = styles></menuDropdown>
             </li>
-            <li class="post-item">
+            <li class="post-item" @click="thongbao">
                 <router-link to="#" class="RouterLink">Tin Tức</router-link>
             </li>
             <li class="account-item icon">
@@ -76,6 +76,9 @@ export default{
             this.$store.commit('updateSelect',['',''])
             this.$store.commit('updateAreaSelect',['',''])
             this.$store.commit('updateProductSelect',['',''])
+        },
+        thongbao(){
+            alert('Hiện tại chưa có tin tức nào!')
         }
 
     }

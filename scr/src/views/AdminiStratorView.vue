@@ -8,12 +8,12 @@
               <v-form
               v-model="form"
               @submit.prevent="onSubmit">
-                <v-text-field :rules="rules"  label="Id sản phẩm" v-model="addProduct.id_product"></v-text-field>
-                <v-text-field :rules="rules"  label="Tên sản phẩm" v-model="addProduct.name"></v-text-field>
-                <v-text-field :rules="rules"  label="Link ảnh" v-model="addProduct.url"></v-text-field>
-                <v-text-field :rules="rules"  label="Giá tham khảo" v-model="addProduct.price"></v-text-field>
-                <v-select :rules="rules" clearable label="Vùng miền" :items="['mienbac', 'mientrung', 'miennam']" v-model="addProduct.id_area"></v-select>
-                <v-textarea clearable label="Thông tin mô tả" variant="outlined" v-model="addProduct.describe"></v-textarea>
+                <v-text-field :rules="rules"  label="Id sản phẩm" ref="a" v-model="addProduct.id_product"></v-text-field>
+                <v-text-field :rules="rules"  label="Tên sản phẩm" ref="b" v-model="addProduct.name"></v-text-field>
+                <v-text-field :rules="rules"  label="Link ảnh" ref="c" v-model="addProduct.url"></v-text-field>
+                <v-text-field :rules="rules"  label="Giá tham khảo" ref="d" v-model="addProduct.price"></v-text-field>
+                <v-select :rules="rules" clearable label="Vùng miền" :items="['mienbac', 'mientrung', 'miennam']" ref="e" v-model="addProduct.id_area"></v-select>
+                <v-textarea clearable label="Thông tin mô tả" variant="outlined" ref="f" v-model="addProduct.describe"></v-textarea>
                 <v-btn 
                   :disabled="!form"
                   type="submit"
@@ -73,10 +73,10 @@ export default{
     },
     methods:{
       onSubmit(){
+        alert("Thêm thành công!");
         this.tam = this.addProduct
         this.loading = true
         this.$store.dispatch('addData', this.tam);
-        console.log(this.tam);
 
       },
     }
